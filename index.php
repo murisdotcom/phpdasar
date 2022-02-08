@@ -62,7 +62,6 @@
   <span><a href="latihan4.php">Latihan4</a></span>
   <span><a href="login/login.php">Login</a></span>
   <h1>Belajar PHP untuk pemula</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis autem eos exercitationem? Hic, laboriosam officiis. Tempora veniam accusamus consequuntur hic, aspernatur porro natus quaerat quo nostrum eaque ex dignissimos aperiam.</p>
   
   <!-- time 100 hari yang akan datang -->
   <!-- <?= date("d M Y", time()-60*60*24*100);?> -->

@@ -40,3 +40,11 @@
   padding: 15px;
   text-align: center;
 }
+
+.table>tbody>tr>* {
+  vertical-align: middle;
+}
+
+.table {
+  text-align: center;
+}

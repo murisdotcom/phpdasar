@@ -104,7 +104,7 @@ if (isset($_POST["cari"])){
       </div>
     </div>
   </nav>
-  
+
   <div class="col">
     <div class="container-fluid">
       <h1>Daftar Reseller</h1>
@@ -114,14 +114,15 @@ if (isset($_POST["cari"])){
       <br>
 
       <form class="form-inline" action="" method="post">
-        <input class="form-control mr-sm-2" type="text" name="keyword" size="50" autofocus placeholder="Masukkan keyword pencarian. . ."
-          autocomplete="off" id="keyword">
+        <input class="form-control mr-sm-2" type="text" name="keyword" size="50" autofocus
+          placeholder="Masukkan keyword pencarian. . ." autocomplete="off" id="keyword">
         <button type="submit" name="cari" id="tombol-cari">Cari</button>
 
         <img src="../img/loader.gif" class="loader">
 
       </form>
       <br>
+      
       <!-- navigasi -->
 
       <?php if( $halamanAktif > 1) :?>
@@ -130,9 +131,9 @@ if (isset($_POST["cari"])){
 
       <?php for($i=1; $i <= $jumlahHalaman; $i++) :?>
       <?php if($i==$halamanAktif) :?>
-      <a href="?halaman=<?= $i; ?>" style="font-weight: bold; color:blue"><?= $i; ?></a>
+      <a class="btn btn-large" href="?halaman=<?= $i; ?>" style="font-weight: bold; color:blue"><?= $i; ?></a>
       <?php else : ?>
-      <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+      <a class="btn btn-large" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
       <?php endif; ?>
       <?php endfor;?>
 

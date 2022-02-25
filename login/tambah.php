@@ -78,6 +78,9 @@ if (isset($_POST["submit"])){
             </li>
 
             <li class="nav-item">
+              <a class="nav-link" href="cetak.php" target="_blank">Cetak</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="logout.php">Logout</a>
             </li>
 

@@ -17,15 +17,15 @@ $mahasiswa = query($query);
 ?>
 
 <table class="table table-striped" border="1" cellpadding="10" cellspacing="0">
-  <thead>
+  <thead class="thead-dark">
     <tr>
       <th>No.</th>
-      <th>Aksi</th>
       <th>Gambar</th>
       <th>NPM</th>
       <th>Nama</th>
       <th>Email</th>
       <th>Jurusan</th>
+      <th>#</th>
     </tr>
   </thead>
   <tbody>
@@ -34,16 +34,16 @@ $mahasiswa = query($query);
     <tr>
       <td><?= $i; ?></td>
       <td>
-        <a href="ubah.php?id=<?= $mhs["id"]; ?>">Ubah</a> |
-        <a href="hapus.php?id=<?= $mhs["id"]; ?>" onclick="return confirm('Yakin hapus ?');">Hapus</a>
-      </td>
-      <td>
         <img src="../img/<?= $mhs["gambar"]; ?>" width="70">
       </td>
       <td><?= $mhs["npm"]; ?></td>
       <td><?= $mhs["nama"]; ?></td>
       <td><?= $mhs["email"]; ?></td>
       <td><?= $mhs["jurusan"]; ?></td>
+      <td>
+        <a class="btn btn-success" href="ubah.php?id=<?= $mhs["id"]; ?>">Ubah</a>
+        <a class="btn btn-danger" href="hapus.php?id=<?= $mhs["id"]; ?>" onclick="return confirm('Yakin hapus ?');">Hapus</a>
+      </td>
     </tr>
     <?php $i++; ?>
     <?php endforeach; ?>

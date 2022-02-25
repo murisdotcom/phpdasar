@@ -55,9 +55,9 @@ if (isset($_POST["cari"])){
     .loader {
       width: 100px;
       position: absolute;
-      top: 120px;
+      top: 125px;
       z-index: -1;
-      left: 430px;
+      left: 455px;
       display: none;
     }
   </style>
@@ -67,31 +67,39 @@ if (isset($_POST["cari"])){
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="col">
-      <div class="container-fluid">
+      <div class="collapse navbar-collapse">
         <a class="navbar-brand" href="admin.php">MS GLOW</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="admin.php">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="admin.php">Daftar Reseller</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cetak.php" target="_blank">Cetak</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="logout.php">Logout</a>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="cetak.php" target="_blank">Cetak</a>
+                <a class="dropdown-item" href="logout.php">Logout</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
             </li>
           </ul>
         </div>
       </div>
     </div>
   </nav>
+  
   <div class="col">
     <div class="container-fluid">
       <h1>Daftar Reseller</h1>
@@ -100,8 +108,8 @@ if (isset($_POST["cari"])){
       <br>
       <br>
 
-      <form action="" method="post">
-        <input type="text" name="keyword" size="50" autofocus placeholder="masukkan keyword pencarian..."
+      <form class="form-inline" action="" method="post">
+        <input class="form-control mr-sm-2" type="text" name="keyword" size="50" autofocus placeholder="Masukkan keyword pencarian. . ."
           autocomplete="off" id="keyword">
         <button type="submit" name="cari" id="tombol-cari">Cari</button>
 
@@ -131,7 +139,7 @@ if (isset($_POST["cari"])){
       <div id="container">
 
         <table class="table table-striped" border="1" cellpadding="10" cellspacing="0">
-          <thead>
+          <thead class="thead-dark">
             <tr>
               <th scope="col">No.</th>
               <th scope="col">Gambar</th>

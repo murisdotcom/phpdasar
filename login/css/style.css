@@ -77,3 +77,34 @@
   padding-top: 20px;
   padding-bottom: 15px;
 }
+
+/* Tambah.php */
+.tambah .logotambah {
+  color: white;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+}
+
+.tambah {
+  background-color: #666 !important;
+}
+
+.tambah .contenttt {
+  color: white;
+  width: 700px;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  padding: 100px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.button {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-left: 100px;
+  /* padding: 15px; */
+  text-align: center;
+}

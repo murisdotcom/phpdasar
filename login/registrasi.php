@@ -64,8 +64,13 @@ if ( isset($_POST["register"])){
           <input class="form-control" type="password" name="password2" id="password2">
         </div>
       </div>
-      <button class="btn btn-primary" type="submit" name="register">Register</button>
 
+      <div class="form-group row">
+        <label class="col-sm-4"></label>
+        <div class="col-sm-7">
+          <button class="btn btn-primary" type="submit" name="register">Register</button>
+        </div>
+      </div>
     </form>
   </div>
   <div class="copyright">

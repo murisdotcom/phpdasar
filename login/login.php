@@ -94,22 +94,23 @@ if (isset($_POST["login"])){
         <!-- <label for="password">Password :</label> -->
         <input type="password" class="form-control" name="password" id="password" placeholder="Password">
       </div>
-      
+
       <?php if(isset($error)) :?>
-    <p style="color: red; font-style: italic;"><b>Username / Password Salah !</b></p>
-    <?php endif; ?>
+      <p style="color: red; font-style: italic;"><b>Username / Password Salah !</b></p>
+      <?php endif; ?>
 
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" name="remember" id="remember">
         <label class="form-check-label" for="remember">Remember me</label>
       </div>
-      
+
       <button type="submit" class="btn btn-primary" name="login">Login</button>
     </form>
-    <!-- <span class="span">Klik disini untuk <a href="registrasi.php">registrasi</a></span> -->
   </div>
   <div class="copyright">
-  <span><i>Copyright &copy; <?= date("Y"); ?> <b>muris.com</b></i></span>
+    <a class="btn btn-warning" href="registrasi.php">Klik disini untuk registrasi</a>
+    <br>
+    <i>Copyright &copy; <?= date("Y"); ?> <b>muris.com</b></i>
   </div>
   <!-- Optional JavaScript; choose one of the two! -->
 

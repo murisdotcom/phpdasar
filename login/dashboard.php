@@ -8,24 +8,8 @@ if ( !isset($_SESSION["login"])){
 // koneksi ke function
 require 'functions.php';
 
-// pagination
-// konfigurasi
-$jumlahDataPerhalaman = 5;
-$jumlahData = count(query("SELECT * FROM mahasiswa"));
-$jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman);
-$halamanAktif = ( isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
-$awalData = ( $jumlahDataPerhalaman * $halamanAktif) - $jumlahDataPerhalaman;
-
-$mahasiswa = query("SELECT * FROM mahasiswa LIMIT $awalData, $jumlahDataPerhalaman");
-
-// tombol cari ditekan
-if (isset($_POST["cari"])){
-  $mahasiswa = cari($_POST["keyword"]);
-
-}
-
 // Ambil data dari table mahasiswa/query data mahasiswa
-// $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
+$mahasiswa = mysqli_query($conn, "SELECT * FROM mahasiswa");
 
 // Ambil data (fetch) mahasiswa dari objek result
 // Ada 4 cara untuk mengambil data dalam lemari/tabel
@@ -109,40 +93,7 @@ if (isset($_POST["cari"])){
 
   <div class="col">
     <div class="container-fluid">
-      <h1>Daftar Reseller</h1>
-      <br>
-      <a class="btn btn-primary" href="tambah.php">Tambah Data Reseller</a>
-      <br>
-      <br>
-
-      <form class="form-inline" action="" method="post">
-        <input class="form-control mr-sm-2" type="text" name="keyword" size="50" autofocus
-          placeholder="Masukkan keyword pencarian. . ." autocomplete="off" id="keyword">
-        <button type="submit" name="cari" id="tombol-cari">Cari</button>
-
-        <img src="../img/loader.gif" class="loader">
-
-      </form>
-      <br>
-      
-      <!-- navigasi -->
-
-      <?php if( $halamanAktif > 1) :?>
-      <a class="btn btn-primary" href="?halaman=<?=$halamanAktif-1;?>">&laquo;</a>
-      <?php endif; ?>
-
-      <?php for($i=1; $i <= $jumlahHalaman; $i++) :?>
-      <?php if($i==$halamanAktif) :?>
-      <a class="btn btn-large" href="?halaman=<?= $i; ?>" style="font-weight: bold; color:blue"><?= $i; ?></a>
-      <?php else : ?>
-      <a class="btn btn-large" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
-      <?php endif; ?>
-      <?php endfor;?>
-
-      <?php if( $halamanAktif < $jumlahHalaman) :?>
-      <a class="btn btn-primary" href="?halaman=<?=$halamanAktif+1;?>">&raquo;</a>
-      <?php endif; ?>
-      <br>
+      <h1>Dashboard</h1>
       <br>
       <div id="container">
 
@@ -150,7 +101,6 @@ if (isset($_POST["cari"])){
           <thead class="thead-dark">
             <tr>
               <th scope="col">No.</th>
-              <th scope="col">Gambar</th>
               <th scope="col">NPM</th>
               <th scope="col">Nama</th>
               <th scope="col">Email</th>
@@ -163,9 +113,6 @@ if (isset($_POST["cari"])){
             <?php foreach( $mahasiswa as $mhs) :?>
             <tr>
               <th scope="row"><?= $i; ?></th>
-              <td>
-                <img src="../img/<?= $mhs["gambar"]; ?>" width="70">
-              </td>
               <td><?= $mhs["npm"]; ?></td>
               <td><?= $mhs["nama"]; ?></td>
               <td><?= $mhs["email"]; ?></td>
